@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      new Promise((resolve, reject) => {
+        resolve(10);
+      });
+
+      // 전체 유저 목록을 가져다줘
+      // 옛날에는 통신을 하기 위해서 ajax(jquery), axios 라이브러리가 반드시 필요
+      // fetch 함수
+      // fetch(결로), 기본적으로 methodsms GET 방식으로 생각한다
+
+      let res = fetch("https://koreanjson.com/users");
+      console.log(res);
+      res.then((a) => {
+        console.log(a);
+      });
+      // 실행해야하는 코드들....
+      console.log("데이터와는 관련없는 코드");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/ex3_register.css" />
+    <title>Facebook - 로그인 또는 가입</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="logo">
+        <img src="../img/facebook-logo.svg" alt="페이스북 로고" />
+      </div>
+      <div class="card">
+        <div class="header">
+          <h2>새 계정 만들기</h2>
+          <p>빠르고 쉽습니다</p>
+        </div>
+        <div class="body">
+          <form action="">
+            <div class="in-name">
+              <div>
+                <input type="text" name="lastname" placeholder="성(성)" />
+              </div>
+              <div>
+                <input
+                  type="text"
+                  name="firstname"
+                  placeholder="이름(성은 제외)"
+                />
+              </div>
+            </div>
+            <!-- 휴대폰 및 비밀번호 폼 요소 -->
+            <div class="in-info">
+              <div>
+                <input
+                  type="text"
+                  name="reg_email"
+                  placeholder="휴대폰 번호 또는 이메일"
+                />
+              </div>
+              <div>
+                <input type="text" name="reg_pass" placeholder="새 비밀번호" />
+              </div>
+            </div>
+            <!-- 생년월일 -->
+            <div class="in-age">
+              <div class="text">생일</div>
+              <div>
+                <select name="birthday-year" id="birthday-year" title="연도">
+                  <option value="2023">2023</option>
+                  <option value="2022">2022</option>
+                  <option value="2021">2021</option>
+                  <option value="2020">2020</option>
+                  <option value="2019">2019</option>
+                  <option value="2018">2018</option>
+                  <option value="2017">2017</option>
+                  <option value="2016">2016</option>
+                  <option value="2015">2015</option>
+                  <option value="2014">2014</option>
+                  <option value="2013">2013</option>
+                  <option value="2012">2012</option>
+                  <option value="2011">2011</option>
+                  <option value="2010">2010</option>
+                  <option value="2009">2009</option>
+                  <option value="2008">2008</option>
+                  <option value="2007">2007</option>
+                  <option value="2006">2006</option>
+                  <option value="2005">2005</option>
+                  <option value="2004">2004</option>
+                  <option value="2003">2003</option>
+                  <option value="2002">2002</option>
+                  <option value="2001">2001</option>
+                  <option value="2000">2000</option>
+                </select>
+                <select name="birthday-month" id="birthday-month" title="월">
+                  <option value="1">1월</option>
+                  <option value="2">2월</option>
+                  <option value="3">3월</option>
+                  <option value="4">4월</option>
+                  <option value="5">5월</option>
+                  <option value="6">6월</option>
+                  <option value="7">7월</option>
+                  <option value="8">8월</option>
+                  <option value="9">9월</option>
+                  <option value="10">10월</option>
+                  <option value="11">11월</option>
+                  <option value="12">12월</option>
+                </select>
+                <select name="birthday-date" id="birthday-date" title="일">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                  <option value="13">13</option>
+                  <option value="14">14</option>
+                  <option value="15">15</option>
+                  <option value="16">16</option>
+                  <option value="17">17</option>
+                  <option value="18">18</option>
+                  <option value="19">19</option>
+                  <option value="20">20</option>
+                  <option value="21">21</option>
+                  <option value="22">22</option>
+                  <option value="23">23</option>
+                  <option value="24">24</option>
+                  <option value="25">25</option>
+                  <option value="26">26</option>
+                  <option value="27">27</option>
+                  <option value="28">28</option>
+                  <option value="29">29</option>
+                  <option value="30">30</option>
+                  <option value="31">31</option>
+                </select>
+              </div>
+            </div>
+            <!-- 성별 -->
+            <div class="in-type">
+              <div class="text">성별</div>
+              <div>
+                <div class="in-rdo">
+                  <label for="rdo-1">여성</label>
+                  <input type="radio" name="sex" id="rdo-1" value="1" />
+                </div>
+                <div class="in-rdo">
+                  <label for="rdo-2">남성</label>
+                  <input type="radio" name="sex" id="rdo-2" value="2" />
+                </div>
+                <div class="in-rdo">
+                  <label for="rdo-3">개인 지정</label>
+                  <input type="radio" name="sex" id="rdo-3" value="3" />
+                </div>
+              </div>
+            </div>
+            <!-- 가이드 -->
+            <div class="guide">
+              가입하기 버튼을 클리하면 Facebook의 약관, 데이터 정책 및 쿠키
+              정책에 동의하게 됩니다. Facebook으로부터 SMS 알림을 받을 수 있으며
+              알림은 언제든지 옵트 아웃할 수 있습니다.
+            </div>
+            <div class="regist">
+              <button>가입하기</button>
+            </div>
+            <div class="login">
+              <a href="./ex1_index.html">이미 계정이 있으신가요?</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<style></style>

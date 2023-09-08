@@ -1,0 +1,148 @@
+컴포넌트 
+    개발자가 만드는 태그 덩어리(새로운 태그)
+페이지 컴포넌트
+    <>
+        <div>
+            <h1>제목</h1>
+            <p>내용</p>
+        </div>
+        <div>
+            <h1>제목</h1>
+            <p>내용</p>
+        </div>
+        <div>
+            <h1>제목</h1>
+            <p>내용</p>
+        </div>
+        <div>
+            <h1>제목</h1>
+            <p>내용</p>
+        </div>
+    </>
+
+
+
+    <div>
+        <h1>제목</h1>
+        <p>내용</p>
+    </div>   --> <ListContent/>
+
+<>
+    <ListContent/>
+    <ListContent/>
+    <ListContent/>
+    <ListContent/>
+</>
+
+유튜브, 쇼핑몰 --> <Card/> 나중에 재사용하거나 수정하기 용이하다
+기능적으로 최소 단위의 컴포넌트를 분리 OO
+
+가독성 적인 측면에서의 컴포넌트를 분리 OO
+Container / Presenter 분리 방법
+
+Container 컴포넌트란 자바스크립트 논리를 다루는 컴포넌트
+Presenter 컴포넌트란 실질적인 UI를 다루는 컴포넌트를 의미
+
+<Parent/> 부모
+--->
+<MyComponent1/> 자식
+-->
+<h1>제목</h1>
+<p>내용</p>
+
+<MyComponent2/> 자식
+-->
+<label>아이디 : </label>
+<input placeholder="아이디입력" />
+
+
+const Parent = ()=>{
+    return(
+        <>
+            <MyComponent1/>
+            <MyComponent2/>
+        </>
+    );    
+}
+
+
+
+const MyComponent1 = ()=>{
+    return(
+        <>
+            <h1>제목</h1>
+            <p>내용</p>
+        </>
+    )
+}
+
+const MyComponent2 = ()=>{
+    return(
+        <>
+            <label>아이디 : </label>
+            <input placeholder="아이디입력" />
+        </>
+    )
+}
+
+부모컴포넌트에 만든 변수, 함수 등을 자식 컴포넌트에 전달하는 방법
+props 로 전달한다
+
+<MyComponent a="안녕" b={10} c={true}> </MyComponent>
+a, b, c 가 props 이다
+MyComponent({
+    a: "안녕",
+    b: 10,
+    c: true
+})
+
+const MyComponent = (props) => {
+    // props 매게변수에는 어떤 값이 대입되어있을까?
+    // props는 객채를 받아온다
+    // {a: "안녕", b: 10, c: true} 가 props 안에 들어있다
+    // props.a === "안녕"
+}
+
+useRouter 함수 사용 결과는 router 객체이다
+router 객체 안에는 경로와 관련된 다양한 함수,
+key와 value가 들어있다(현재경로, query, 이동해줘함수, ...)
+최초 router 객체가 만들어 질때는 정적으로 완벽한 상태로
+만들어지도록 구현을 해 놓았다(성능향상을 위해서)
+따라서 사용자가 입력한 query를 받아오기 전 상태에서
+먼저 화면을 그리고, 사용자가 입력한 query를 받아오게 되면
+다시한번 화면을 그린다
+두번째로 그려질 때 router 객체의 query 에는 boardId가 잘
+들어있게 된다
+
+하지만 우리가 데이터를 받아오는 함수는 useEffect 안에
+썻기 때문에 router의 query에 아무런 값이 없는 최초
+렌더링 시에만 실행이 되고, 두번째 에는 실행이 되지 않는다...
+
+useEffect 함수를 최초 렌더링 시에만 사용하고 싶은 것이 아닌,
+특정 상황에서 실행하고 싶을 때(변수 속에 있는 값이 변경된 경우만 실행해줘)는
+의존성 배열에 알려주면 된다
+
+useEffect(콜백함수, 의존성배열);
+
+    만약 의존성 배열 자리에 빈 배열이있다면
+    콜백함수는 최초 렌더링 시에만 실행된다
+        useEffect(콜백함수, []);
+
+    의존성 배열에 특정 변수를 써 주면 해당 변수가
+    바뀔때만 실행하도록 만들 수 있다
+
+        ex)
+            let name;
+            let title;
+            let age;
+
+            useEffect(콜백함수, [name, title]);
+
+        해결책
+            useEffect(데이터 받아오는함수, [두번째렌더링시변하는변수])
+
+        router가 정적으로만 완벽한 상태에서는
+        router.inReady에 false
+        동적으로도 완벽한 상태에서는
+        router.isReady에 true가 들어있게 된다
+            useEffect(데이터받아오는함수, [router.isReady])

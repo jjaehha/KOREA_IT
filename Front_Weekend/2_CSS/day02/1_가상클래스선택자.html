@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>가상클래스선택자자</title>
+    <style>
+      .list > li:first-child {
+        color: red;
+      }
+      .list > li:nth-of-type(3) {
+        color: green;
+      }
+      .list > li:last-child {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="list">
+      <li>김사과</li>
+      <li>반하나</li>
+      <li>오렌지</li>
+      <li>이멜론</li>
+    </ul>
+  </body>
+</html>

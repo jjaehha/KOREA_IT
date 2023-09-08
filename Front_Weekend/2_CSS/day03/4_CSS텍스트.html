@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS텍스트4</title>
+    <style>
+      .content {
+        border: 3px dotted #f00;
+        width: 600px;
+        padding: 10px;
+        white-space: nowrap;
+        /* 줄바꿈을 하지 않겠다 default: wrap */
+        /* pre 사용자가 입력한 값 그대로 적용 */
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>text-overflow</h2>
+    <p class="content">
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. A, reiciendis?
+      Exercitationem neque repellat ratione earum delectus hic tempore eligendi,
+      fuga nisi eos reprehenderit consectetur officiis reiciendis excepturi
+      asperiores nobis nam. Lorem ipsum dolor sit amet consectetur adipisicing
+      elit. Maxime repellendus illum facilis sint veritatis porro, aliquid
+      recusandae possimus, tempora a accusantium sequi odio cumque, explicabo
+      ad! Incidunt assumenda vitae illum.
+    </p>
+  </body>
+</html>

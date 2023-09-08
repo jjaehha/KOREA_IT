@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/ex2_main.css" />
+    <title>Facebook</title>
+  </head>
+  <script>
+    const list = [...document.getElementsByClassName("btn-box")];
+
+    list.forEach(
+      (element) =>
+        (element.onclick = () => {
+          list.forEach((a) => (a.className = "btn-box"));
+          element.classList.add("active");
+        })
+    );
+  </script>
+  <body>
+    <header>
+      <div class="head-logo">
+        <img src="../img/facebook-icon.png" alt="페이스북 아이콘" />
+        <input type="text" placeholder="Facebook 검색" />
+      </div>
+      <div class="head-nav">
+        <nav>
+          <span class="btn-box active">
+            <img src="../img/home.png" alt="홈 바로가기" />
+            <span class="btn-line"></span>
+          </span>
+
+          <span class="btn-box">
+            <img src="../img/youtube.png" alt="동영상 바로가기" />
+            <span class="btn-line"></span>
+          </span>
+
+          <span class="btn-box">
+            <img src="../img/people.png" alt="커뮤니티 바로가기" />
+            <span class="btn-line"></span>
+          </span>
+
+          <span class="btn-box">
+            <img src="../img/game.png" alt="게임 바로가기" />
+            <span class="btn-line"></span>
+          </span>
+        </nav>
+      </div>
+      <div class="head-side">
+        <span class="btn-box"><img src="../img/menu.png" alt="메뉴" /></span>
+        <span class="btn-box"><img src="../img/alarm.png" alt="알림" /></span>
+        <span class="btn-box"><img src="../img/more.png" alt="더보기" /></span>
+      </div>
+    </header>
+    <main>
+      <section class="container">
+        <ul class="list">
+          <li>
+            <div class="card">
+              <div class="head">
+                <img class="logo" src="../img/edu_icon.png" alt="광고아이콘" />
+                <span class="title">에듀윌</span>
+                <img src="../img/more.png" alt="더보기 메뉴" />
+              </div>
+              <div class="text">
+                <p>✨기간한정 특별 이벤트✨</p>
+                <p>초시생 필수템, 만화 입문서 무료배포!</p>
+                <p>#합격자수 1위 #애듀윌 #공인중개사</p>
+              </div>
+              <div class="body">
+                <img src="../img/sample-image.jpg" alt="광고이미지" />
+                <div class="text">
+                  <p>EDUWILL.NET</p>
+                  <p>입문교제 선착순 뮤료신청</p>
+                  <p>합격자 수 1위 애듀윌 공인중개사</p>
+                  <button>더 알아보기</button>
+                </div>
+              </div>
+              <div class="foot">
+                <div class="btn-box">
+                  <img src="../img/happy.png" alt="좋아요" />
+                  <span class="btn-text">좋아요</span>
+                </div>
+                <div class="btn-box">
+                  <img src="../img/youtube.png" alt="댓글달기" />
+                  <span class="btn-text">댓글달기</span>
+                </div>
+                <div class="btn-box">
+                  <img src="../img/people.png" alt="공유하기" />
+                  <span class="btn-text">공유하기</span>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="card">
+              <div class="head">
+                <img class="logo" src="../img/edu_icon.png" alt="광고아이콘" />
+                <span class="title">에듀윌</span>
+                <img src="../img/more.png" alt="더보기 메뉴" />
+              </div>
+              <div class="text">
+                <p>✨기간한정 특별 이벤트✨</p>
+                <p>초시생 필수템, 만화 입문서 무료배포!</p>
+                <p>#합격자수 1위 #애듀윌 #공인중개사</p>
+              </div>
+              <div class="body">
+                <img src="../img/sample-image.jpg" alt="광고이미지" />
+                <div class="text">
+                  <p>EDUWILL.NET</p>
+                  <p>입문교제 선착순 뮤료신청</p>
+                  <p>합격자 수 1위 애듀윌 공인중개사</p>
+                  <button>더 알아보기</button>
+                </div>
+              </div>
+              <div class="foot">
+                <div class="btn-box">
+                  <img src="../img/happy.png" alt="좋아요" />
+                  <span class="btn-text">좋아요</span>
+                </div>
+                <div class="btn-box">
+                  <img src="../img/youtube.png" alt="댓글달기" />
+                  <span class="btn-text">댓글달기</span>
+                </div>
+                <div class="btn-box">
+                  <img src="../img/people.png" alt="공유하기" />
+                  <span class="btn-text">공유하기</span>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="card">
+              <div class="head">
+                <img class="logo" src="../img/edu_icon.png" alt="광고아이콘" />
+                <span class="title">에듀윌</span>
+                <img src="../img/more.png" alt="더보기 메뉴" />
+              </div>
+              <div class="text">
+                <p>✨기간한정 특별 이벤트✨</p>
+                <p>초시생 필수템, 만화 입문서 무료배포!</p>
+                <p>#합격자수 1위 #애듀윌 #공인중개사</p>
+              </div>
+              <div class="body">
+                <img src="../img/sample-image.jpg" alt="광고이미지" />
+                <div class="text">
+                  <p>EDUWILL.NET</p>
+                  <p>입문교제 선착순 뮤료신청</p>
+                  <p>합격자 수 1위 애듀윌 공인중개사</p>
+                  <button>더 알아보기</button>
+                </div>
+              </div>
+              <div class="foot">
+                <div class="btn-box">
+                  <img src="../img/happy.png" alt="좋아요" />
+                  <span class="btn-text">좋아요</span>
+                </div>
+                <div class="btn-box">
+                  <img src="../img/youtube.png" alt="댓글달기" />
+                  <span class="btn-text">댓글달기</span>
+                </div>
+                <div class="btn-box">
+                  <img src="../img/people.png" alt="공유하기" />
+                  <span class="btn-text">공유하기</span>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,183 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+header{
+    height: 60px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+}
+
+header img{
+    height: 24px;
+}
+
+.head-logo, .head-side, .head-nav > nav{
+    display: flex;
+    align-items: center;
+}
+
+header .head-logo img{
+    height: 40px;
+    margin: 0 10px;
+}
+
+header .head-logo input{
+    width: 200px;
+    line-height: 40px;
+    padding: 0 20px;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    background-color: rgb(240, 240, 240);
+    font-size: 16px;
+}
+
+.btn-box{
+    width: 140px;
+    height: 46px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 0 4px;
+    border-radius: 5px;
+}
+
+.btn-line{
+    background-color: #1b74e4;
+    width: 100%;
+    height: 5px;
+    position: absolute;
+    bottom: -8px;
+    display: none;
+}
+
+.btn-box.active > .btn-line {
+  display: block;
+}
+
+.head-nav .btn-box:hover {
+  background-color: rgb(240, 240, 240);
+  cursor: pointer;
+}
+
+.head-side {
+  padding-right: 20px;
+}
+
+.head-side .btn-box{
+    width: 40px;
+    height: 40px;
+    margin: 0 5px;
+    background-color: rgb(240, 240, 240);
+    border-radius: 30px;
+}
+
+.head-side img {
+  height: 20px;
+}
+
+.head-side .btn-box:hover {
+  background-color: rgb(220, 220, 220);
+  cursor: pointer;
+}
+
+/* 개시물 css */
+body {
+  background-color: #f0f3f5;
+}
+
+.card{
+  width: 500px;
+  margin: 10px auto;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 1px 2px rgba(0, 0, 0, 0.1);
+}
+.head {
+  width: 100%;
+  position: relative ;
+  height: 60px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.head .logo {
+  height: 40px;
+  border-radius: 40px;
+}
+
+/* 더보기 버튼 */
+.head img:last-child{
+  padding: 10px;
+  height: 20px;
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+  border-radius: 60px;
+}
+
+.head img:last-child:hover{
+  background-color: rgb(240, 240, 240);
+}
+
+.head .title {
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+  margin-left: 10px;
+}
+
+.text {
+  padding: 10px;
+}
+
+.body img {
+  width: 100%;
+}
+
+.body .text {
+  color: #65676b;
+}
+
+.body button {
+  height: 40px;
+  padding: 8px 12px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.foot{
+    height: 40px;
+    display: flex;
+    border-top: 1px solid rgb(211, 211, 211);
+    justify-content: space-between;
+}
+
+.foot .btn-box{
+    display: flex;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.foot .btn-box:hover{
+    background-color: rgb(200, 200, 200);
+}
+
+.foot .btn-box img {
+  height: 20px;
+  margin-right: 10px;
+}

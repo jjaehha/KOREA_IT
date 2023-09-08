@@ -1,0 +1,23 @@
+package day08;
+
+class Car {
+	String brand;
+	String color;
+	int Price;
+
+	public Car(String brand, String color, int price) {
+		 this.brand = brand;
+		 this.color = color;
+		 Price = price;
+	}
+	
+	public Car(String brand, String color, int price) {
+		 this.brand = brand;
+		 this.color = color;
+		 Price = price;
+	}
+}
+
+public class ThisTest {
+
+}

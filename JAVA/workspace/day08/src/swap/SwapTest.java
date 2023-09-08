@@ -1,0 +1,18 @@
+//package swap;
+//
+//public class SwapTest {
+//	static void swap(int a, int b) {
+//		int temp = 0;
+//		temp = ar[0];
+//		ar[0] = ar[1];
+//		ar[1] = temp;
+//	}
+//	public static void main(String[] args) {
+////		int a = 10;
+////		int b = 20;
+////		int temp = 0;
+////		swap(a,b);
+//		int[]ar = new int[] {10,20};
+//		
+//	}
+//}

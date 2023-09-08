@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>자식자손선택자</title>
+    <style>
+      ul a {
+        text-decoration: none;
+      }
+
+      ul a {
+        color: cornflowerblue;
+      }
+
+      ul > li > a {
+        color: deeppink;
+      }
+
+      ul > li > p > a {
+        color: darkviolet;
+      }
+
+      ul li a {
+        color: red;
+      }
+
+      ul li > p > a {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>자식/자손 선택자</h2>
+    <ul>
+      <a href="#">네이버</a>
+      <li>
+        <a href="#">다음</a>
+      </li>
+      <li>
+        <p>
+          <a href="#">구글</a>
+        </p>
+      </li>
+    </ul>
+  </body>
+</html>

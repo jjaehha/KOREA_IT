@@ -1,0 +1,14 @@
+package superTest;
+
+class A {
+	int var1;
+	int var2;
+	
+	public A() {
+		
+	}
+}
+
+public class SuperTest {
+
+}

@@ -1,0 +1,17 @@
+package day07;
+
+class Student3 {
+	int math;
+	int eng;
+	int kor;
+	double avg;
+	String grade;
+	int getTotal() {
+		return math+eng+kor;	
+	}
+}
+
+public class Student2 {
+
+	
+}

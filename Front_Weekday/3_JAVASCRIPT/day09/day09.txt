@@ -1,0 +1,124 @@
+DOM 객체(key와 value로 이루어져있을 것이다)
+    DOM 객체 속의 key값이 의미하는 바가 무엇일까??
+
+    ex)
+        <div id="myDiv">안녕하세요</div>   --> javascript
+                                            let myDiv = {
+                                                tagName: "div",
+                                                innerText: "안녕하세요",
+                                                innerHTML: "안녕하세요",
+                                                ...
+                                            }
+
+        <div id="myDiv">반가워</div>        myDiv.innerText = "반가워";
+
+==============================================================================================================================================================
+
+자바스크립트 이벤트
+    이벤트란? 특정 변화에 대한 사건
+    특정변화에 대한 산건?
+        마우스 이벤트: 더블클릭, 클릭, 마우스를 옮겼다, 마우스를 스크롤했다
+        키보드 이벤트: 특정키를 눌렀다, 눌렀다가 땠다 ...
+        티랜지션이끝났다!, input태그 내의 변화가 생겼을때,
+
+    이벤트를 설정하는 방법
+    1. on 이벤트이름 패턴으로 html 속성을 만들어놨다.
+    그 속성의 속성 값으로 이벤트가 밸생 했을때 실행시키고자 하는 함수를 호출한다
+    ex)
+        <div onclick="함수()" onmousemove="함수2()">안녕하세요</div>
+
+    2. 해당 태그 객체를 받아와서, 직접 key값에다 함수(소괄호XXX)를 대입하기
+    ex)
+        <div>안녕핳세요</div>
+
+        자바스크립트로 받아오기
+        let myDiv = {
+            innerText:"안녕하세요",
+            innerHTML:"안녕하세요",
+            style:{
+                fontSize:"15px",
+                color: "black",
+                ...
+            }
+            onclick: 함수,
+            onmousemove: null,
+            onkeypressed: null,
+            ...
+        }
+
+        myDiv.onclick = 함수;
+
+    3. addEventListener 함수 사용
+    ex)
+        <div>안녕하세요</div>
+
+        let myDiv = {
+            ...
+            ...
+            ...
+            innerText:"안녕하세요",
+            innerHTML:"안녕하세요",
+            style:{
+                fontSize:"15px",
+                color: "black",
+                ...
+            }
+            onclick: 함수,
+            onmousemove: null,
+            onkeypressed: null,
+            ...
+            addEventListener: function(a,b) {
+                ...;
+                ...;
+                ...;
+            }
+            classList: ...
+        }
+        //myDiv.addEventListener(이벤트종류, 해당이벤트가 발생 했을때 실행시킬 함수);
+        myDiv.addEventListener("click', add);
+
+    event 객체
+        event가 발생하면 실행시킬 함수의 매개변수에는
+        발생한 이벤트에 대한 모든 정보가 들어있는 객체가 인자 값으로 전달 된다
+        이때, event 객체 안의 target 번째 방에는(keyd에는 )이벤트가 발생된
+        요소 객체가 들어있다
+
+        html 코드에다가 onclick 속성에 직접 함수를 사용하는 방식에서는
+        인자를 event 라는 이름으로 반드시 넘겨줘야한다
+        ex)
+            <div onclick="myFunct(event)"></div>
+            하지만 이 방식은 특정 브라우저에서만 지원을 한다
+
+        event 객체를 사용하는 경우라면
+            객체.onclick = 함수;
+            혹은
+            객체.addEventListener(이벤트, 함수);
+            방식을 사용하는 것이 바람직하다
+
+    내가 해당 이벤트가 발생했을 때 여러개의 함수를 차례로 실행해야 하나?
+
+    ex)
+        let myDiv = document.queryselector('div');
+        myDiv.onclick = f1;
+        myDiv.onclick = f2;
+
+        //클릭 이벤트가 발생되면 f2 함수만 실행됨
+
+        myDiv.addEventListener('click', f1);
+        mtDiv.addEventListener('click', f2);
+        // 클릭 이벤트가 발생하며ㅛㄴ f1실행된 후 f2 차례로 실행됨
+
+        문자열이 특정 패턴인지를 확인하는 방법
+            정규표현식
+            이메일 모양이니?
+            전화번호 모양이니?
+            주민번호 모양이니?
+            주민번호 모양이니?
+            비밀번호인데 적어도 소문자, 대문자, 특수문자가 포함된 8글자 이상이니?
+
+        정규표현식도 자바스크립트에서는 객체
+            new Regexp(패턴); --> /패턴/
+
+            new Array(1, 2, 3); ---> [1, 2, 3];
+
+            new String('안녕'); --> '안녕'

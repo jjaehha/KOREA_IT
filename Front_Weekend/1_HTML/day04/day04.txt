@@ -1,0 +1,49 @@
+datalist
+    검색이 가능한(미리보기) input(사용자 입력) 태그
+
+    ex)
+    <input type+="text" list = " datalist 요소의 id 속성명 "/>
+
+    <datalist id = "속성값">
+        <option>옥수수</option>
+        <option>감자</option>
+        <option>고구마</option>\
+        ...
+    </datalist>
+
+---------------------------------------------------------------------------------------------------------------------
+
+form
+    사용자의 입력을 웹 브라우저에서부터 백엔드에 데이터를 요청할 때 사용
+    그러나 반드시 사용해야하는 것은 아님
+
+    keypoin
+        action
+        method
+        submit(onSubmit)
+
+    form은 submit 버튼이 눌러지거나 onSubmit 오청이 왔을때
+    action에 데이터를 전송
+
+    action은  form이 submit 되었을 때 데이터가 향하는 주소 (URL)
+    * method라고 하는 것은 전송 방식
+
+        GET 요청
+            - 주소에 데이터를 실어서 전달하는 방식
+            백엔드주소. com/signup?user_id="jaeha"&user_pw="134"
+
+        POST 요청
+            - 주소에 데이터를 전송하지 않고
+            http request message의 body부분에 데이터를 실어서 전송
+             이 외에도 put, patch, delete, option, ....
+
+
+    <form action="백엔드주소.com/signup" method="POST">
+    
+    </form>
+
+
+---------------------------------------------------------------------------------------------------------------------
+
+ifarme
+    링크를 가지고와서 웹 사이트에서 보여주는 것

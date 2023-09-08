@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Pacifico&display=swap");
+
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+header > svg > text {
+  font-family: "Pacifico", cursive;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  box-shadow: 2px 4px 12px rgb(0 0 0 / 8%);
+}
+
+header > input#menu {
+  display: none;
+}
+
+header > label[for="menu"] {
+  width: 50px;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index: 3;
+}
+
+header > label[for="menu"] > span {
+  width: 100%;
+  height: 5px;
+  background-color: black;
+  border-radius: 15px;
+  transition: 2s;
+}
+
+header > input#menu:checked ~ div {
+  transform: translateX(-400px);
+}
+
+header > input#menu:checked ~ label > span:first-child {
+  transform: rotate(45deg) translateY(30px);
+}
+
+header > input#menu:checked ~ label > span:nth-child(2) {
+  display: none;
+}
+
+header > input#menu:checked ~ label > span:last-child {
+  transform: rotate(-45deg) translateY(-30px);
+}
+
+/* 사이드 메뉴 div 스타일 적용 */
+#side-menu {
+  position: fixed;
+  top: 0;
+  right: -400px;
+  background-color: #e9e9e9;
+  width: 400px;
+  height: 100%;
+  transition: 3s ease;
+}
+
+/* main 디자인 */
+.content {
+  position: relative;
+  height: 400px;
+}
+
+.content > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.txt {
+  padding: 0px 50px;
+  position: absolute;
+  top: 400px;
+  background-color: rgba(0 0 0 / 70%);
+  width: 100%;
+  height: 100%;
+  color: antiquewhite;
+  opacity: 0%;
+  transition: 1s;
+}
+
+.content > img:hover + .txt {
+  opacity: 100%;
+  transform: translateY(-400px);
+}

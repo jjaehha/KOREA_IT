@@ -1,0 +1,31 @@
+.carousel-container {
+  width: 200px;
+  height: 200px;
+  border: 2px solid black;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-container > button:first-of-type {
+  position: absolute;
+  top: 50%;
+}
+
+.carousel-container > button:last-of-type {
+  position: absolute;
+  top: 50%;
+  right: 0;
+}
+
+.carousel-contents {
+  display: flex;
+  transition: 0.3s;
+}
+
+.carousel-item {
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  line-height: 200px;
+  flex-shrink: 0;
+}

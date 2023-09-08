@@ -1,0 +1,53 @@
+package day07;
+class Tv{
+   int ch;
+   int vol;
+   boolean power;
+   int inch;
+   int price;
+   String color;
+   public Tv() {
+   }
+   public Tv(int inch, int price, String color) {
+      this.inch = inch;
+      this.price = price;
+      this.color = color;
+   }
+   public Tv(int inch, int price, int ch) {
+      this.inch = inch;
+      this.price = price;
+      this.ch = ch;
+   }
+   void powerOnOff() {}
+   void ChUp() {}
+   void ChDown() {}
+   
+}
+class Tv3 {
+   
+   
+}
+public class TvTest {
+   public static void main(String[] args) {
+//      Tv lgTv = new Tv();
+//      lgTv.ch =10;
+//      lgTv.vol = 5;
+//      lgTv.power = false;
+//      lgTv.inch = 80;
+//      lgTv.price = 140000000;
+//      lgTv.color = "black";
+      Tv lgTv = new Tv(80, 140000000,"black");
+      System.out.println(lgTv.inch);
+      System.out.println(lgTv.price);
+      System.out.println(lgTv.color);
+   }
+}
+
+
+
+
+
+
+
+
+

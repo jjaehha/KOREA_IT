@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        display: grid;
+        /* grid-template-rows: 100px 300px 100px 100px;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:
+          "header header header"
+          "main . ."
+          "main . aside"
+          "footer footer footer"; */
+
+        /* 위아래가 같은 것 */
+
+        grid-template:
+          "header header header" 100px
+          "main . ." 300px
+          "main . aside" 100px
+          "footer footer footer" 100px
+          / 2fr 100px 1fr;
+      }
+
+      header {
+        background-color: coral;
+        grid-area: header;
+      }
+
+      main {
+        background-color: orangered;
+        grid-area: main;
+      }
+
+      aside {
+        background-color: greenyellow;
+        grid-area: aside;
+      }
+
+      footer {
+        background-color: darkseagreen;
+        grid-area: footer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header></header>
+      <main></main>
+      <aside></aside>
+      <footer></footer>
+    </div>
+  </body>
+</html>

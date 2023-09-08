@@ -1,0 +1,180 @@
+SQL
+    mysql workbench: sql 명령어 작성을 도와주는 프로그램
+    
+        dbeaver: 무료, 여러 데이터베이스(오라클, mysql, sqlserver...)
+                 통합프로그램
+
+    db 비밀번호: 1234
+
+    새로운 데이터베이스 만들기
+        
+        좌측상단 원기둥아이콘 create new schema 클릭
+
+            이름 설정, utf-8, utf-8/bin 설정후
+
+                Apply
+
+        새로운 사용자계정 만들기
+
+            좌측 Navigator 에서
+            Administration Tab 클릭
+            User and privileges 버튼 클릭
+            좌측 하단 Add account 클릭
+            새로운 id 설정, 비밀번호, 비밀번호 확인 클릭
+
+            우측상단 Schema privileges 탭 클릭
+            Add Entry 버튼 클릭
+            Selected Schema > 원하는 데이터베이스 선택
+            권한 Select All 클릭 후 Apply
+
+        db connection 만들기
+            처음 보이는 페이지에서 + 버튼 클릭
+            connection Name은 원하는 이름
+            host name은 localhost
+            username은 로그인할 계정 id (kjhboard23user)
+            비밀번호는 Store in Vault 클릭시 다음부터는 로그인 안함
+            Default Schema 에는 로그인할 데이터베이스 이름 (kjhboard23)
+
+            Test connection 클릭시 Successfull: 정상적으로 입력됨
+            OK
+
+    데이터베이스 이름: kjhboard23
+    데이터베이스 사용자 id: kjhboard23user
+    데이터베이스 사용자 pw: 1234
+
+    (mysql 설치할때 비밀번호 root 계정의 비밀번호,
+    root 계정은 mysql에서 기본적으로 제공하는 관리자 id)
+
+sql 기본
+    대문자와 소문자를 구분하지 않는다
+    sql상 정해저있는 예약어(명령어)는 대문자
+    그외의 것은 소문자로 작성한다
+
+    한 줄 한 줄씩 실행된다
+    (파이썬, R)
+
+    테이블 만들기
+        CREATE TABLE 테이블명(
+            컬럼1 데이터타입[제약조건],
+            컬럼2 데이터타입,
+            ...,
+            컬럼n 데이터타입(마지막은 , 가있으면 안됨)
+            CONSTRAINT 제약조건 이름 제약조건 종류 (컬럼이름),
+            CONSTRAINT 제약조건 이름 제약조건 종류 (컬럼이름),
+            ...,
+            CONSTRAINT 제약조건 이름 제약조건 종류 (컬럼이름)
+        );
+
+        CREATE TABLE 테이블명(
+            아이디 숫자,
+            비밀번호 문자,
+            나이 숫자,
+            CONSTRAINT 회원테이블기본키 PRIMARY KEY (아이디)
+        );
+
+        데이터타입
+            INT: 정수
+            FLOAT: 실수
+            VARCHAR(크기): 문자
+            DATETIME: 날짜와시간 타입
+            
+        제약조건 종류
+            PRIMARY KEY
+                해당컬럼을  기본키로 제한하겠다
+                    --> 해당 컬럼에 중복값이 들어가거나 NULL 값이 들어가면
+                        오류가 발생
+                        ex)
+                            CONSTRAINT 제약조건이름 PRIMARY KEY (컬럼이름)
+            FOREIGN KEY
+                해당 컬럼을 외래키로 제한하겠다
+                    --> 해당 컬럼이 참조하고 있는 부모의 컬럼속에 있는 값만
+                        해당컬럼에 추가할 수 있고,
+                        해당 컬럼에서 참조되지 않는 값만 부모테이블에서
+                        삭제할 수 있다
+                        ex)
+                            CONSTRAINT 제약조건이름 FOREIGN KEY (컬럼이름) REFERENCES 테이블이름 (컬럼이름)
+            UNIQUE
+                해당 컬럼은 주복되지 않도록 제한하겠다
+                    --> 해당 컬럼에는 중복된 값을 넣어줄 수 없다
+                    ex)
+                            CONSTRAINT 제약조건이름 UNIQUE (컬럼이름)
+            CHECK
+                해당 컬럼에 들어갈 수 있는 값의 범위를 제한하겠다
+                    --> 나이(양수), 성별(M 혹은 F)
+                    ex)
+                            CONSTRAINT 제약조건이름 CHECK (조건)
+            NOT NULL(CHECK의 일종)
+                컬럼을 만들때만 적용할 수 있다
+
+            (제약조건 여러개 사용 가능)
+                AGE 라는 컬럼을 NULL값 못넣고, 0 보다 큰값만, 중복x
+
+                AGE INT NOT NULL UNIQUE CHECK(AGE > 0),
+                ...
+                ==>
+                AGE INT NOT NULL,
+                CONSTRAINT c1 UNIQUE (AGE)
+                CONSTRAINT c2 CHECK (AGE > 0)
+
+            (기본값 설정하기)
+                데이터 주가할때 해당 컬럼에 값을 추가하지 않으면
+                기본적으로 NULL 이 추가되는데,
+                NULL이 아닌 특정 값이 추가되도록 하고 싶다면 기본값을
+                설정할 수 있다
+
+회원 테이블(TBL_USERS) 설계
+컬럼
+id: 회원ID를 저장하는 컬럼, 문자열, PRIMARY KEY
+pw: 회원PW를 저장하는 컬럼, 문자열, NOT NULL
+createAt: 회원가입 일자를 저장하는 컬럼, DATETIME, NOT NULL, 기본값: 시스템상 현재 시간
+updateAt: 회원정보를 수정한 일자를 저장하는 컬럼, DATETIME, NOT NULL, 기본값: 시스템상 현재 시간
+name: 회원 이름을 저장하는 컬럼, NOT NULL 
+
+게시글 테이블(tbl_posts)
+컬럼
+    id : 게시글 id를 저장하는 컬럼 
+        primary key 로 사용 
+        int 타입 
+    title : 게시글 제목을 저장하는 컬럼 
+        varchar(200), not null 
+    content : 게시글 내용을 저장하는 컬럼 
+        varchar(300), not null 
+    createdAt : 게시글 작성 일자를 저장하는 컬럼
+        datetime , 기본값은 시스템상 현재시간, not null 
+    updatedAt : 게시글 수정 일자를 저장하는 컬럼 
+        datetime, 기본값은 시스템상 현재시간, not null 
+    writerId : 게시글 작성자 id를 저장하는 컬럼 
+        varchar(50), not null, foriegin key, 회원테이블 id 컬럼을 참조
+
+테이블 삭제
+    DROP TABLE 테이블명;
+
+테이블에 데이터 삽입
+SQL 공통
+    INSERT INTO 테이블명
+    (컬럼, 컬럼, 컬럼, ...)
+    VALUES
+    (값, 값, 값, ...)
+
+MYSQL 확장 버전
+    INSERT INTO 테이블명
+    SET 컬럼 = 값, 컬럼 = 값, 컬럼 = 값 ...;
+
+테이블에 데이터 조회
+SQL 공통
+    SELECT 컬럼, 컬럼, 컬럼,....
+    FROM 테이블명
+    [ORDER BY 컬럼 [ASC or DESC]]
+    (전체컬럼은 컬럼자리에 * 사용)
+
+제약조건을 벗어나는 값을 넣어주려 하면 오류가 발생(주의)
+
+댓글 테이블 (tbl_comments)
+
+id : 댓글을 구분하기 위한 primary key, int, auto_increment
+content : 댓글 내용 varchar(200) ,not null 
+createdAt : 기본값 : now() not null
+updatedAt : 기본값 : now() not null
+writerId  : foreign key tbl_users id컬럼 참조 
+postId   : foreign key tbl_posts id 컬럼 참조
+                

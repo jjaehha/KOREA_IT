@@ -1,0 +1,150 @@
+package day07;
+
+import java.util.Scanner;
+
+class Creature {
+
+	//캐릭터이름
+	String name;
+	//hp
+	int hp;
+	//밥먹은 수
+	int eatCnt;
+	//턴
+	int turn;
+	//변
+	boolean poo;
+
+	//먹기: 턴 1증가, hp 2증가, 먹는 카운트 1증가
+	void eat() {
+		this.turn++;
+		this.hp += 2;
+		this.eatCnt++;
+	}
+
+	//자기: 3초동안 잠에든다. hp2 감소, 턴 2증가
+	void sleep() {
+		for (int i = 0; i < 3; i++) {
+			System.out.println("zzZzzZ");
+
+			try {
+				Thread.sleep(1000);
+			} catch (Exception e) {
+
+			}
+		}
+		System.out.println("잠에서 깨어났습니다");
+		this.hp -= 2;
+		this.turn += 2;
+	}
+	//대변보기: 밥을 3번 먹으면 실행, 변을 안치우면 1턴당 hp1감소
+	void poop() {
+		System.out.println("*변을 봤다");
+		this.poo = true;
+		this.eatCnt = 0;
+	}
+	//청소하기: 대현을 치운다.
+	void cleanUp() {
+		System.out.println("청소 시작");
+		this.poo = false;
+	}
+	//상태보기
+	void printState() {
+		System.out.println(this.turn+"일차");
+		System.out.println("이름: " + this.name);
+		System.out.println("HP: " + this.hp);
+	}
+
+	public Creature(String name, int hp) {
+		this.name = name;
+		this.hp = hp;
+	}
+}
+
+public class Game {
+	public static void main(String[] args) {
+		String title = "##########\n"
+					 + "##다마고치##\n"
+					 + "#########";
+		
+		String mainMsg = "1. 캐릭터선택\n"
+					   + "2. 종료\n"
+					   + "입력 >>";
+		
+		String charMsg = "1. 피카츄\n"
+				   	   + "2. 파이리\n"
+				   	   + "3. 꼬부기\n"
+				   	   + "4. 돌아가기\n"
+				   	   + "입력 >>";
+		
+		String gameMsg = "1. 먹기\n"
+					   	+ "2. 자기\n"
+					   	+ "3. 청소하기\n"
+					   	+ "4. 상태확인\n"
+					   	+ "입력 >>";
+		
+		Scanner sc = new Scanner(System.in);
+		int choice = 0;
+		int gameChoice = 0;
+		
+		System.out.println(title);
+		
+		while(true) {
+			System.out.println(mainMsg);
+			choice = sc.nextInt();
+			if (choice == 2) {
+				break;
+			}
+			System.out.println(charMsg);
+			choice =sc.nextInt();
+			if (choice == 4) {
+				continue;
+			}
+			Creature[] creature = {
+					new Creature("피카튜", 3),
+					new Creature("파이리", 2),
+					new Creature("꼬부기", 3),
+			};
+			while(true) {
+				System.out.println(gameMsg);
+				gameChoice = sc.nextInt();
+				Creature myChar = creature[choice-1];
+				
+				switch(gameChoice) {
+				case 1:
+					myChar.eat();
+					System.out.println("냠냠!!");
+					break;
+				case 2:
+					myChar.cleanUp();
+					break;
+				case 3:
+					myChar.cleanUp();
+					break;
+				case 4:
+					myChar.printState();
+					break;
+				default:
+					System.out.println("잘못입력했습니다");
+				}
+				if(myChar.eatCnt >= 3) {
+					myChar.poop();
+				}
+				if(myChar.poo) {
+					System.out.println("변을 치워야합니다");
+					myChar.hp--;
+				}
+				if(myChar.turn >= 10) {
+					System.out.println("###########");
+					myChar.printState();
+					System.out.println("###########");
+					System.out.println(myChar.hp >= 5 ? "해피엔딩" : "게임오버");
+				}
+			}
+			//1. 먹기 2. 자기 3. 청소하기 4. 상태확인
+			
+		}
+		
+		
+	}
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <!-- 이미지 요소 -->
+        <!-- src = "경로" -->
+        <!-- 
+            절대경로: 현재 내 컴퓨터에서 해당 파일의 위치
+                        (C\바탕화면\아이유.png)
+
+                    : URL
+                    www.이미지장소.com/아이유
+            
+            상대경로: 현재 html파일 위치의 상대적인 경로
+                        만약 형재 파일보다 상위 경로에 있다면 ..을 통해 나가주고
+                        현재 파일과 같은 경로에 있다면 . 을 통해 현재 경로임을 알려준다
+         -->
+        <img src="./img/한소희1.jpg" alt="연애인"/>
+        <!-- ..을 통하여 상위 폴더로 이동 가능 -->
+        <img src="../../../"/>
+        <!-- 글상자 요소 -->
+        <!-- input 태그의 입력값은 input의 value 속성 값으로 들어감 -->
+        <!-- 그러나 textarea의 입력값은 컨텐츠(내용물)과 value 속성으로도 들어감 -->
+        <textarea placeholder="글을 작성해주세요" cols="50" rows="50" >
+            안녕하세요       
+        </textarea>
+        <input size="50"/>
+        <!-- 과제 
+        자기 소개하기
+        수업 동안 혹은 본인이 MDN을 보고 참고한 모든 요소를 활용
+        성함, 취미, 나이 등등 여러 소개 요소를 작성하여서
+        
+        korpg95274@gmail.com
+        구글 메일로 보낼 때는 zip파일로 묶어서 보내지지 않음
+        구글드라이브를 활용하여 보내야함
+        
+        반드시 포함되어야 하는 내용
+    
+        1. 개발자로서의 가치관 (어떤 개발자가 좋은 개발자인지)
+        2. 개발자가 되서 만들고 싶은 페이지
+        3. 개발을 배우게 된 이유-->
+    </body>
+</html>

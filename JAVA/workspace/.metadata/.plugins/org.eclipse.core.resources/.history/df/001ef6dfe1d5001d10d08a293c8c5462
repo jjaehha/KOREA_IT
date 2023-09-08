@@ -1,0 +1,21 @@
+package day07;
+
+class Tv {
+	int ch;
+	int vol;
+	boolean power;
+	public Tv(int inch,	int price, String color) {
+		
+	}
+	
+	void powerOnOff(){}
+	void ChUp(){}
+	void ChDown(){}
+}
+
+public class TvTest {
+	public static void main(String[] args) {
+		Tv lgTv = new Tv(90, 1400000, "black");
+
+	}
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        height: 100vh;
+        background-color: rgba(181, 229, 232, 0.7);
+        overflow: hidden;
+      }
+
+      .ocean {
+        position: absolute;
+        height: 5%;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        background-color: 015871;
+      }
+
+      .wave {
+        background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg);
+        position: absolute;
+        width: 6400px;
+        height: 258px;
+        top: -198px;
+        animation: wave 7s linear infinite;
+      }
+
+      .wave:nth-of-type(2) {
+        top: -175px;
+        animation: wave 7s linear -0.5s infinite;
+      }
+
+      @keyframes wave {
+        0% {
+          /* margin-left: 0; */
+          transform: translateX(0);
+        }
+
+        100% {
+          /* margin-left: -1600px; */
+          transform: translateX(-1600px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ocean">
+      <div class="wave"></div>
+      <div class="wave"></div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,11 @@
+package day08;
+
+class Car{
+	String brand;
+	String color;
+	int Price
+}
+
+public class ThisTest {
+
+}

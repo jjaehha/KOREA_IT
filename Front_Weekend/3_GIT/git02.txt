@@ -1,0 +1,122 @@
+오거나이제이션
+    합병
+    branch -> clone -> fork -> merge -> pr -> issue
+
+==================================================================================================================================================
+*branch
+    repository 생성
+    분기를 나눌 수 있다(분기점).
+
+    main(master): default branch
+
+    dev: development branch
+
+    -----------------------> 항시 존재
+
+    feat
+
+    fix
+
+    style
+
+    ex) feat/login
+        style/event-screen
+        hotfix/sns-login
+    -----------------------> 일시적 ---> 삭제
+
+* Semantic Commit Messages
+
+    https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716
+
+    feat: 새로운 기능
+    fix: 버그 수정
+    docs: 문서 수정
+    style: 레이아웃, 코드 스타일 수정
+    refactor: 기능 개선
+    test: 테스트 코드
+    chore: 로직 외 코드 수정
+
+    ex)
+        feat: 로그인 로직을 추가하였습니다.
+        style: 이벤트 스크린의 배너를 추가하였습니다.
+
+==================================================================================================================================================
+
+* Flow
+
+    1. repository 생성
+    2. 로컬 저장소 (.git)과 원격저장소(github) 연결
+    3. init 파일을 main애 push (프로젝트 폴더 구조)
+    4. 분기점(branch) 생성
+        
+        git branch
+            - 현재 내 로컬 환경에 만들어진 branch 목록
+        
+        git branch 브랜치명
+            - 해당 브랜치명 브랜치가 내 로컬 환경에 생성
+        
+        git branch -D 브랜치명
+            - 해당 브랜치명의 브랜치 로컬 환경에서 삭제
+
+        git checkout 브랜치명
+            - 현재 내 로컬 환경에서 바라보고 있는 브랜치 변경
+
+        git checkout -b 브랜치명
+            - 브랜치 생성과 이동을 한번에 해주는 명령어
+            - 단, 해당 브랜치는 현재 내 로컬 환경 브랜치 목록에
+              존재해서는 안된다.
+    
+    5. 개발..ing (add - commit - (pull) - push)
+                 - git pull 원격저장소명 branch --rebase
+                 - git push origin 브랜치명 (원격저장소에서도 분기가 생김)
+                 - 개발 중에도 버전관리는 이루어져야한다
+    
+    6. main (init)
+        new branch (dev)
+            - 개발 종료 후 main branch 합치는 과정
+            - git merge 합칠 브랜치명
+
+        ex) feat/login - 기능 개발
+            ggit checkout main - git pull main
+            git checkout feat/login
+            git merge main
+            conflict 발생 > resolve
+
+                git stash (스테이징 된 파일을 잠깐 저장)
+                git stash pop
+
+                    ex)
+                        git checkout main (수정사항 => X)
+                        git stash
+                        git checkout main (이동 O)
+                        git pull main (O)
+                        git checkout 브랜치
+                        git stash pop (수정사항이 있어도 브랜치 이동 가능)
+
+            코드 이상 없는지 test
+            (main 브랜치 merge -> 충돌 해결 -> 테스트 끝)
+
+            git add .
+            git commit
+            git push first main => 될까요 안될까요? (X)
+
+            - 바로 main에 푸쉬하는 것이 아니라
+            - 내 기존 브랜치에 푸쉬 후 허락
+
+            git push first 브랜치
+            (원격 저장소에도 여러분의 branch가 생김)
+
+                ex) pull request (pr) => code review => 확인
+                    ------- 목적지 설정 (main, v0.1)
+
+        main(원격 저장소) ---> main + dev
+
+            git checkout main
+            git pull origin main
+
+            - 원격 저장소와 내 로컬 환경 main 브랜치의 동기화
+            - 자동으로 되어있을 수 있음
+
+==================================================================================================================================================
+
+호스팅 [dothome, FTP, github]

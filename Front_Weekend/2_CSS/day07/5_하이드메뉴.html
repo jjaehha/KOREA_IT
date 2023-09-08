@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>하이드 메뉴</title>
+    <style>
+      header {
+        width: 100%;
+        height: 100px;
+      }
+
+      #menu {
+        width: 980px;
+        height: 100px;
+        margin: 0 auto;
+        background-color: darkcyan;
+        position: relative;
+      }
+
+      #hide-menu {
+        background-color: darkolivegreen;
+        transition: height 0.5s ease-in-out;
+        width: 980px;
+        height: 0px;
+        position: absolute;
+        top: 100px;
+      }
+
+      #menu:hover > #hide-menu {
+        height: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div id="menu">
+        <div id="hide-menu"></div>
+      </div>
+    </header>
+    <!-- 위로 올리면 js파일을 만들어야 함 -->
+    <!-- <script defer="defer">
+      const $in-header = document.querySelector(".in-header");
+      const $nav = document.querySelector(".nav");
+      const $dropdown-menu = document.querySelector(".dropdown-menu");
+
+      $nav.addEventListener("mouseover", () => {
+        $dropdown-menu.style.height = "159px";
+      });
+
+      $in-header.addEventListener("mouseleave", () => {
+        $dropdown-menu.style.height = "0px";
+      });
+    </script> -->
+  </body>
+</html>

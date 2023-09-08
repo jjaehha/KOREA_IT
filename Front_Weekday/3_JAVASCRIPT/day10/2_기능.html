@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>기능들</title>
+    <link rel="stylesheet" href="carousel.css" />
+    <style>
+      .container {
+        border: 1px solid black;
+        padding: 20px;
+      }
+      .input-msg {
+        font-size: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>input태그 유효성 검사</h1>
+
+      <input id="input-id" type="text" placeholder="id를 입력하시오" />
+      <p id="id-msg" class="input-msg"></p>
+
+      <input id="input-pw" type="text" placeholder="pw를 입력하시오" />
+      <p id="pw-msg" class="input-msg"></p>
+    </div>
+
+    <div class="container">
+      <h1>캐러셀 디자인</h1>
+      <div class="carousel-container">
+        <div class="carousel-contents">
+          <div style="background-color: red" class="carousel-item">1</div>
+          <div style="background-color: orange" class="carousel-item">2</div>
+          <div style="background-color: yellow" class="carousel-item">3</div>
+          <div style="background-color: green" class="carousel-item">4</div>
+          <div style="background-color: blue" class="carousel-item">5</div>
+        </div>
+        <button onclick="onCarouselButtonClick('left')"><</button>
+        <button onclick="onCarouselButtonClick('right')">></button>
+      </div>
+    </div>
+
+    <script src="./2_기능.js"></script>
+    <script src="./carousel.js"></script>
+  </body>
+</html>

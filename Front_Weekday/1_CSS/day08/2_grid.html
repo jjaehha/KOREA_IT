@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>그리드 레이아웃</title>
+    <style>
+      div.container {
+        background-color: #e9e9e9;
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows: 1fr 2fr 1fr;
+      }
+      div.container > div {
+        border: 2px solid black;
+      }
+      body > div.container:first-of-type > .box1 {
+        grid-column: 1/4;
+      }
+      body > div.container:first-of-type > .box2 {
+        grid-row: 2/4;
+      }
+      body > div.container:first-of-type > .box3 {
+        grid-column: 2/4;
+      }
+      body > div.container:first-of-type > .box4 {
+        grid-column: 3/4;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>행번호 줄번호 구역 지정</h2>
+    <div class="container">
+      <div class="box1"><h2>1</h2></div>
+      <div class="box2"><h2>2</h2></div>
+      <div class="box3"><h2>3</h2></div>
+      <div class="box4"><h2>4</h2></div>
+    </div>
+    <h2>구역에 이름을 붙여서 직접 지정</h2>
+    <div class="container">
+      <div class="box1"><h2>1</h2></div>
+      <div class="box2"><h2>2</h2></div>
+      <div class="box3"><h2>3</h2></div>
+      <div class="box4"><h2>4</h2></div>
+    </div>
+  </body>
+</html>

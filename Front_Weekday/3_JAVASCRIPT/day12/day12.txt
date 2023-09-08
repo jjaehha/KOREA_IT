@@ -1,0 +1,93 @@
+ API
+    백엔드에서 만든 함수(어떤 요청에 대해 그 결과를 받아오는 함수들)
+    기본적으로 데이터를 받아오는 함수들은 비동기적으로 만들어져 있다
+    하지만 이러한 비동기 함수를 동기적으로 사용하요 하는경우가 있다
+    (받아온 데이터를 활용하는 경우)
+
+    비동기 함수를 동기적으로 사용하는 방법
+        
+        then() 함수를 사용
+
+    Promise 타입의 객체 속에 바아온 데이터는 PromiseResult 라는 key(방) 안에 들어있다
+    Promise 타입의 객체는 PromiseStatus 라는 key(방)이 있고, 데이터를 아직 완전히 받아오지 못한 상태라면
+    PromiseStatus는 'Pending' 상태이다
+    Pending 상태일 때 PromiseResult에는 아무런 값ㅇ이 들어가 있지 않다
+
+    Promise 객체 안에는 then() 이라는 함수가 존재하고,
+    then 함수의 인자로는 콜백함수(함수)를 전댈해줘야 하고,
+    이때 인자로 넘겨준 콜백함수는 PromiseStatus 가 Pending에서 벗어나면 실행이 된다(동기적으로..)
+    인자로 넘겨준 콜백함수의 매개변수에는 PromiseResult에 들어있는 값이 전달되고,
+    인자로 넘겨준 콜백함수의 return 값은 Promise 객체의 PromiseResult 안에 들어가게 되며,
+    이 Promise 객체가 then 함수 사용 결과가 된다.
+
+    fetch('게시글목록 가져다줘!').then((param) => {
+        a;
+        b;
+        c;
+        return10;
+    }).then((aaa) => {
+        1;
+        2;
+        3;
+        return '김재하';
+    }).
+
+    fetch() 실행 결과는 요청한 데이터와 응답에 대한 여러가지 정보
+    (응답상태코드, 메시지, url 정보 등)들이 들어있는 Response 객체가
+    PromiseResult에 담기게 된다
+    이때 Response 객체 안의 jsom() 함수를 실행하면
+    실질적으로 요청한 데이터가(사용자목록, 게시글목록, ..)
+    PromiseResult에 들어가있게 된다
+
+    fetch(url).then((Response) => Response.json()).then((data) =>{
+        //실질적으로 원했던 데이터 data
+    }). catch((err) =>{
+        // 오류 발생시 실행시킬 코드;
+    })
+
+    fetch함수 이전의 데이터 요청 라이브러리
+    axios
+
+    then() 함수의 필요성
+        data를 활용하여 작업을 할 경우에는
+        데이터를 다 받아오고 나서야 실행이 되어야 하다
+        (동기적으로 실행이 되어야 한다)
+        이럴때 then() 함수를 사용해야 한다
+
+    then() 함수의 단점
+        보기가 좋지 않다 ..!
+        ---> 가독성을 높이기 위해서 async await 키워드 등장
+
+    가독성이 높다
+        위에서 차례로 읽히고, 코드의 논리적 순서가
+        한눈에 보인다
+
+    예외처리
+        try {
+            코드1;
+            코드2;
+            ...;
+        } catch(err) {
+            try영역 안에 있는 코드에서 오류가
+            발생할때문 catch 안쪽의 코드가 실행
+            err 속에는 오류에 대한 정보가 들어있다
+        }
+
+    await 비동기함수();
+    비동기함수 앞에 await 키워드를 붙이게 되면
+    해당 함수는 동기적으로 동작하게 된다
+    (해당 함수가 다 끝나야만 다음 동작을 수행한다)
+    대신 await를 감싸고 있는 함수 앞에는
+    async 라는 키워드를 반드시 붙여야 한다
+
+    async () => {
+        await
+    }
+
+    async function (){
+        await
+    }
+
+    async function add() {
+        await
+    }

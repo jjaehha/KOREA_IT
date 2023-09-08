@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>flex레이아웃</title>
+    <style>
+      #flex-wrap1 {
+        display: flex;
+        flex-direction: row;
+        background-color: #e9e9e9;
+        flex-wrap: wrap-reverse;
+        justify-content: space-between;
+      }
+      #flex-wrap2 {
+        display: flex;
+        flex-direction: row;
+        background-color: #e9e9e9;
+        flex-wrap: wrap-reverse;
+        justify-content: space-evenly;
+      }
+      #flex-wrap3 {
+        display: flex;
+        flex-direction: row;
+        background-color: #e9e9e9;
+        flex-wrap: wrap-reverse;
+        justify-content: space-around;
+      }
+
+      div {
+        border: 1px solid black;
+        display: flex;
+        background-color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>주축정렬(justify-content:space-between)</h2>
+    <div id="flex-wrap1">
+      <div>div1입니다</div>
+      <div>div2입니다</div>
+      <div>div3입니다</div>
+    </div>
+    <h2>주축정렬(justify-content:space-evenly)</h2>
+    <div id="flex-wrap2">
+      <div>div1입니다</div>
+      <div>div2입니다</div>
+      <div>div3입니다</div>
+    </div>
+    <h2>주축정렬(justify-content:space-around)</h2>
+    <div id="flex-wrap3">
+      <div>div1입니다</div>
+      <div>div2입니다</div>
+      <div>div3입니다</div>
+  </body>
+</html>

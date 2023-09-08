@@ -1,0 +1,184 @@
+스코프 (scope)
+
+    변수에 접근할 수 있는 범위
+    변수를 찾기 위한 규칙
+
+    자바스크립트에서 스코프란 전역스코프와 지역스코프
+
+    전역 스코프에는 어떠한 곳에서도 접근이 가능한 값이 지정
+    지역 스코프에는 특정한 블럭 내에서만 접근이 가능한 값 지정
+
+
+    지역변수
+        특정한 구역 내에서만 사용할 수 있는 변서 (지역 스코프에 포함)
+
+    전역 변수
+        전체에서 사용이 가능한 변수, 웹 페이지가 닫혀야만 메모리에서 사라짐
+
+    function printNumber(num1, num2) {
+        const number = 5;
+        console.log(number)
+    }
+
+    printNumber();
+    console.log(number)
+
+
+    스코프 체인
+        let c = 7;
+        {
+            let b = 5;
+            {
+                let a = 5;
+                let c = 3
+                console.log(a,b,c)
+            }
+        }
+
+============================================================================================================================================================
+
+타입변환
+
+    자바스크립트는 데이터 타입이 있다.
+    런타입 시 안에 넣어있는 값에 따라 타입이 추론되어 부여 --- 암묵적 타입 변환
+
+    그러나 자바스크립트의 타입은
+    특수한 경우 경제적으로 형변환 되는 경우도 있고
+    개발자의 의도에 따라 형변환 되는 경우 있습니다. --- 강제 타입 변환
+
+    let a = 10;
+    let b = 10 + ''; // "10"
+
+    console.log(typeof a)
+    // 타입을 콘솔에 찍는 것
+    // 문자열과 숫자르 구분할 때
+
+    function a(number) {
+        if(!number) return; <-------------- ealry return;
+
+        let parseNumber = number;
+
+        return number
+
+        let parseNumber = number;
+        if(typeof number === string) {
+            parseNumber = parseInt(number)
+        }
+    }
+
+    1. 문자열
+
+        1+"2" // '12'
+        1-"1" // 0
+        1*"10" //10
+
+        String(1) // "1"
+        String(NaN) // "NaN"
+
+    2. 숫자형
+        Number('0') //0
+        parseInt('0') //0
+
+    3. 불리안형
+    Boolean(1) // true
+    Boolean(undefined) // false
+    Boolean(NaN) // false
+    Boolean("") // false
+    Boolean('false') // true
+    Boolean(null) // false
+
+    '' / undefined / null   // false
+
+    Boolean({}) // true
+    Boolean([]) // true
+
+============================================================================================================================================================
+
+*** Object (객체)
+
+    자바스크립트는 객체기반의 스크립트 언어이며 사실상 자바스크립트를 이루고 있는
+    모든 것이라고 해도 무방, 원시 타입 외에 데이터는 모두 object이기 때문이다
+
+    자바스크립트의 객체는
+    키와 값으로 구성된 속성들의 집합
+
+    키
+        집합에서 특정한 값을 찾기 위해 다른 값들과 비교되는 값 (유일)
+
+    프로퍼티
+        키로 이름을 구별하고 해당 키의 값으로 구성되어있다.
+        
+        ex)
+            <input placeholder = "비밀번호를 입력해주세요" />
+
+    선언 방법
+        let kimjh = {
+            name: 김재하,
+            age: '21',
+            height: 186
+        }
+
+        let obj = new Object() // (X) 잘 사용하지 않음
+
+    접근 방법
+        (1) 마침표 표기법
+            console.log(kimjh.name)
+            // 김재하
+        
+        (2) 대괄호 표기법
+            console.log(kimjh["name"])
+            // 김재하
+
+            // 객체의 모든 키 값에 접근하는 방법
+            ex)
+                for (let key in kimjh) {
+                    console.log(kimjh[key])
+                }
+
+    * 객체는 왜 중요할까요?
+
+        1. 여러데이터를 공통된 주제로 묶을 수 있다.
+            let kong {
+                animal: "dog",
+                age: 11
+            }
+
+        2. JSON (Javascript Object Notation)
+
+            1. 자바스크립트에서 객체를 만들 때 사용하는 표현식
+            2. 데이터를 전송하거나 저장할 때 많이 사용되는 경량의 교환 방식
+
+            {
+                id: 1,
+                title: "오늘하루는 좋은 하루입니다",
+                User: {
+                    name : 김재하,
+                    profile_img: "https://이미지 저장소.com,
+                },
+                CreatedAt: 2023.03.19,
+                Content: "여러분들 오늘 하루도 고생 많으셨습니다",
+                Comment: [
+                    {
+                        Content: "강사님도 고생 많으셨습니다".
+                        User: {
+                            name: 000,
+                            profile: 000
+                        }
+                    },
+                    {
+                        Content: "강사님도 고생 많으셨습니다".
+                        User: {
+                            name: 000,
+                            profile: 000
+                        }
+                    },
+                    {
+                        Content: "강사님도 고생 많으셨습니다".
+                        User: {
+                            name: 000,
+                            profile: 000
+                        }
+                    },
+                    
+                ]                
+            }

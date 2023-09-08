@@ -1,0 +1,36 @@
+package random;
+
+import java.util.Random;
+
+class Enhance{
+   boolean[] arChance = {true,true,true,true,true,true,true,false,false,false};
+   String weapon;
+   int cnt;
+   public Enhance(String weapon) {
+      this.weapon =weapon;
+   }
+   void start() {
+      Random r = new Random();
+      int index = r.nextInt(10); // 0~9까지 랜덤한 숫자가 나온다.
+      if(arChance[index]) {
+         cnt++;
+         System.out.println("강화에 성공했습니다");
+      }else {
+         cnt =0;
+         System.out.println("강화에 실패했습니다.");
+      }
+   }
+   void printInfo() {
+      System.out.println(weapon+"+"+cnt+"강");
+   }
+}
+public class RandomTest {
+   public static void main(String[] args) {
+      Enhance e = new Enhance("목검");
+   }
+}
+
+
+
+
+

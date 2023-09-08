@@ -1,0 +1,36 @@
+package day08;
+class Car{
+   String brand;
+   String color;
+   int price;
+   public Car() {
+      this("Kia","BLACK", 3400);
+//      this.brand = "Kia";
+//      this.color = "black";
+//      this.price = 3400;
+   }
+   public Car(String brand, String color, int price) {
+      this.brand = brand;
+      this.color = color;
+      this.price = price;
+   }
+   
+   public Car(String brand, String color) {
+	   this.brand = brand;
+	   this.color = color;
+   }
+   
+}
+public class ThisTest {
+   public static void main(String[] args) {
+      Car car1 = new Car("BMW","White", 6500);
+      Car car2 = new Car();
+      
+      System.out.println(car1.brand);
+      System.out.println(car2.brand);
+   }
+}
+
+
+
+

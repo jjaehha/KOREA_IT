@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>절대위치</title>
+    <style>
+      #wrapper {
+        width: 500px;
+        height: 500px;
+        border: 3px solid #f00;
+      }
+      .box {
+        width: 50px;
+        height: 50px;
+        background-color: #ff1493;
+        color: #fff;
+        position: absolute;
+      }
+      .ab1 {
+        top: 0;
+        right: 0;
+      }
+
+      .ab2 {
+        bottom: 0;
+        left: 0;
+      }
+
+      .ab3 {
+        top: 200px;
+        left: 200px;
+      }
+      .ab4 {
+        bottom: 100px;
+        right: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>절대 위치 지정방식</h2>
+    <div id="wrapper">
+      <div class="box ab1">1</div>
+      <div class="box ab2">2</div>
+      <div class="box ab3">3</div>
+      <div class="box ab4">4</div>
+    </div>
+  </body>
+</html>

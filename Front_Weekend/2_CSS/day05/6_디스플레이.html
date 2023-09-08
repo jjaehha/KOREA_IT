@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        background-color: black;
+        color: white;
+        margin: 20px;
+      }
+
+      p.none {
+        display: none;
+        /* 랜더링 트리 제외, 자리도 차지하지 않음 */
+      }
+
+      p.hidden {
+        visibility: hidden;
+        /* hidden, visible */
+        /* 자리를 차지하고 있음 */
+      }
+
+      p.opacity {
+        opacity: 0;
+        /* 0 ~ 1 */
+      }
+
+      button {
+        background-color: black;
+        /* transparent - 투명색 */
+        color: white;
+        border: none;
+        cursor: pointer;
+        /* 요소외 마우스(커서)가 올라갔을 때 커서의 모양 */
+      }
+
+      button:hover {
+        opacity: 0.7;
+        /* opacity는 안에 있는 내용물도 투명화 */
+        /* 배경색만 추명화 시켜야 할 때는 rgba를 사용한다 */
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>디스플레이_2</h2>
+    <div>
+      <p>display 속성값은 none으로 설정</p>
+      <p class="none">display 속성값은 none으로 설정</p>
+    </div>
+
+    <div>
+      <p>visible 속성값은 hidden으로 설정</p>
+      <p class="hidden">visible 속성값은 hidden으로 설정</p>
+    </div>
+
+    <div>
+      <p>opacity 속성 값은 0으로 설정</p>
+      <p class="opacity">opacity 속성 값은 0으로 설정</p>
+    </div>
+    <button>로그인</button>
+  </body>
+</html>

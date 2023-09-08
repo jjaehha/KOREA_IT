@@ -1,0 +1,140 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-size: 0;
+}
+
+/* 입력폼 기본 디자인 */
+input,
+select,
+.in-rdo {
+  color: #1c2e21;
+  font-size: 15px;
+  line-height: 16px;
+  padding: 10px;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid #ccd0d5;
+}
+
+body {
+  background-color: #f0f2f5;
+}
+
+.container {
+  width: 420px;
+  margin: 0 auto;
+}
+.logo {
+  text-align: center;
+  margin-top: 10px;
+}
+.logo > img {
+  height: 100px;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  align-items: center;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.header {
+  padding: 10px;
+  border-bottom: 1px solid #ccd0d5;
+  margin: 10px 0 0 0;
+}
+
+.header > h2 {
+  font-size: 25px;
+  line-height: 32px;
+  text-align: center;
+}
+
+.header > p {
+  color: #606770;
+  font-size: 15px;
+  text-align: center;
+  margin: 0 0 12px 0;
+}
+
+.body {
+  padding: 20px;
+}
+
+/* 
+calc(): 함수 값 설정을 쉽게 만들어준다.
+*/
+.in-name > div {
+  width: calc(50% - 4px);
+  margin: 0 2px 0 2px;
+  display: inline-block;
+}
+
+.in-name input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.in-info > div {
+  width: calc(100% - 4px);
+  box-sizing: border-box;
+  margin: 10px auto;
+}
+
+.in-info input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.in-age select,
+.in-type .in-rdo {
+  width: calc(100% / 3 - 4px);
+  height: 36px;
+  box-sizing: border-box;
+  display: inline-block;
+  padding: 5px 10px 5px 10px;
+}
+
+.text {
+  font-size: 12px;
+  color: #606770;
+  margin: 10px 0 10px 0;
+}
+
+.in-rdo > label {
+  font-size: 16px;
+}
+
+.guide {
+  color: #777;
+  font-size: 11px;
+}
+
+.regist,
+.login {
+  margin: 15px 0 15px 0;
+  text-align: center;
+}
+
+button {
+  background-color: #00a400;
+  font-size: 18px;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  padding: 0 32px 0 32px;
+  margin: 20px 0 0 0;
+  height: 36px;
+  width: 200px;
+  font-weight: 600;
+}
+
+.login > a {
+  font-size: 16px;
+  color: #1877f2;
+  text-decoration: none;
+}

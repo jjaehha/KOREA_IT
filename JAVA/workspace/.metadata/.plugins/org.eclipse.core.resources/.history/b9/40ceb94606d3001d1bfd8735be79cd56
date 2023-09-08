@@ -1,0 +1,39 @@
+package project;
+
+import java.util.Random;
+
+public class Lotto {
+	public static void main(String[] args) {
+		
+		Random ran = new Random();
+		
+		for (int i=0; i<6; i++) {
+			for(int j = 0; j < i; j++) {
+				if(i == j) {
+					i--;
+					break;
+				}
+			}
+			System.out.println("로또번호는" + (ran.nextInt(45)+1) + "입니다");
+		}
+		
+		System.out.println("===============");
+		
+		// 뭔가 배열 사용하라고 하실거 같아서 하나더 해봅니다
+		int lottoNum = 0;
+		int ar[] = new int[6];
+		
+		for(int i=0; i< ar.length; i++) {
+			lottoNum = ran.nextInt(45)+1;
+			ar[i] = lottoNum;
+			for(int j = 0; j < i; j++) {
+				if(ar[i] == ar[j]) {
+					i--;
+					break;
+				}
+			}
+			System.out.println("로또번호는" + ar[i] + "입니다");
+		}
+	}
+
+}

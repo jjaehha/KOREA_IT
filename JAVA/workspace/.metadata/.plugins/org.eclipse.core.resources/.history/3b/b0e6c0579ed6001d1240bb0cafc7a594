@@ -1,0 +1,12 @@
+package swap;
+
+public class SwapTest {
+	void swap(int a, int b) {
+		int temp = 0;
+		temp = a;
+		b = temp;
+	}
+	public static void main(String[] args) {
+		
+	}
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>id/class 선택자</title>
+    <style>
+        .smll-font {
+            font-size: 12px;
+        }
+
+        .big-font {
+            font-size: 24px;
+        }
+
+        .red-text {
+            color: #f00;
+        }
+
+        .font-bold {
+            font-weight: bold;
+            /* class 선택자는 나중에오는 선택자에 의해 css 속성이 덮어씌워진다. */
+            color: blue;
+        }
+
+        #red-text {
+            /* 같은 id 속성을 주는 것은 개발자끼리의 약속을 어기는 행위니 지양 */
+            color: red;
+        }
+    </style>
+    
+</head>
+<body>
+    <header>HEADER</header>
+    <main>
+        <h2>ID/CLASS 선택자</h2>
+        <p class="small-font">
+            Lorem ipsum dolor sit, <span id="red-text">amet consectetur adipisicing</span> elit.
+            Rerum delectus impedit nisi? Sunt ad iste consequuntur quam ipsa tenetur doloribus sint,
+            dolore odit impedit mollitia <span class="red-text">alias, maiores, in pariatur</span> fuga.
+        </p>
+        <p class="big-font">
+            Lorem ipsum dolor sit, <span id="red-text">amet consectetur adipisicing</span> elit.
+            Rerum delectus impedit nisi? Sunt ad iste consequuntur quam ipsa tenetur doloribus sint,
+            dolore odit impedit mollitia <span class="red-text font-bold">alias, maiores, in pariatur</span> fuga.
+        </p>
+    </main>
+    <footer>FOOTER</footer>
+</body>
+</html>
+
+<!-- 
+    <ul class="header-menu-list"> (o)
+    </ul>
+
+    <ul class="box1"> (x)
+    </ul>
+
+    id랑 class를 지어줄 때는
+    해당 구역이 어떤 역할을 하고 있는지 가독성 있도록 역할에 올바르게 이름을 지어주어야한다.
+ -->

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>flex레이아웃 교차축정렬</title>
+    <style>
+      .container {
+        display: flex;
+        background-color: #e9e9e9;
+        height: 400px;
+        width: 70%;
+        margin: 0 auto;
+      }
+      .container > div {
+        border: 1px solid black;
+      }
+      .box1 {
+        height: 100px;
+        width: 100px;
+      }
+      .box2 {
+        height: 200px;
+        width: 200px;
+      }
+      .box3 {
+        height: 100px;
+        width: 200px;
+        font-size: 50px;
+        align-self: flex-end;
+      }
+      .box4 {
+        /* height: 50px; */
+      }
+
+      #container1 {
+        align-items: center;
+      }
+      #container2 {
+        align-items: flex-start;
+      }
+      #container3 {
+        align-items: end;
+      }
+      #container4 {
+        align-items: baseline;
+      }
+      #container5 {
+        align-items: stretch;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>flex 레이아웃 교차축 정령</h1>
+    <h2>align-items:center</h2>
+    <div class="container" id="container1">
+      <div class="box1">box1</div>
+      <div class="box2">box2</div>
+      <div class="box3">box3</div>
+      <div class="box4">box4</div>
+    </div>
+    <h2>align-items:flex-start</h2>
+    <div class="container" id="container2">
+      <div class="box1">box1</div>
+      <div class="box2">box2</div>
+      <div class="box3">box3</div>
+      <div class="box4">box4</div>
+    </div>
+    <h2>align-items:flex-start</h2>
+    <div class="container" id="container3">
+      <div class="box1">box1</div>
+      <div class="box2">box2</div>
+      <div class="box3">box3</div>
+      <div class="box4">box4</div>
+    </div>
+    <h2>align-items:baseline</h2>
+    <div class="container" id="container4">
+      <div class="box1">box1</div>
+      <div class="box2">box2</div>
+      <div class="box3">box3</div>
+      <div class="box4">box4</div>
+    </div>
+    <h2>align-items:stretch</h2>
+    <div class="container" id="container5">
+      <div class="box1">box1</div>
+      <div class="box2">box2</div>
+      <div class="box3">box3</div>
+      <div class="box4">box4</div>
+    </div>
+  </body>
+</html>

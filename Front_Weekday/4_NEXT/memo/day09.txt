@@ -1,0 +1,47 @@
+컴포넌트 재사용성
+    Layout 이라는 컴포넌트를 만들고, 여기저기서 사용
+    --> Modal창 열기 이렇듯 자주 사용되는 디자인 혹은 기능은 Componenet로 미리 만들어 놓을 수 있다
+
+    게시글 작성 UI
+
+    제목:
+    내용:
+
+        작성하기번튼
+
+    게시글 수정 UI
+
+    제목:
+    네용:
+
+        수정하기버튼
+
+REST API
+    API 모양은 주소모양 www.naver.com/post
+
+    조회 --> get 방식을 통해 요청
+    추가 --> post 방식을 통해 요청
+    수정 --> put 방식을 통해 요청
+    삭제 --> delete 방식을 통해 요청
+
+axios 라이브러리의 도움
+    koreanjson.com/post, get --> 게시글 조회
+
+    axios.get(주소)
+
+    koreanjson.com/posts, post --> 게시글 추가
+
+    axios.post(주소, {id:1, title: "제목", content:"오늘 처음 갑입했어요"....})
+
+
+router객체의 replace vs push
+    
+    push는 해당 주소로 이동, 이전페이지의 기록이 남는다
+
+    replace는 해당 주소로 이동, 이전 페이지의 기록이 남지 않는다
+
+rest api 방식
+    수정이면 put 방식이라고하자 (전체 수정)
+    patch(일부수정)
+
+axios.put(주소, 데이터)

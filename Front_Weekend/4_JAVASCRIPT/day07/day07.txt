@@ -1,0 +1,80 @@
+* 배열의 고차함수
+
+    map, filter, find, findIndex, reduce, every, some, sort
+
+    keyword
+        * 새로운 배열 반환
+
+    map
+        배열의 모든 요소를 순차적으로 순회하며 인자로 주어진 콜백함수의 반환 값으로
+        새로운 배열을 생성, 기존 배열을 훼손하지 않습니다.
+        ex)
+            const ar = [1, 2, 3, 4, 5]
+
+                                 요소  인덱스  원본배열
+            const newAr = arr.map((el, index, originArr) => {
+                return {
+                    originNumber: el,
+                    addNumber: el + 10
+                }
+            })
+
+            console.log(newAr)
+            // [{originNumber: 1, addNumber: 11}, {originArr: 2, addNumber: 12} ...]
+
+    filter
+        배열의 모든 요소를 순회하며 콜백함수의 반환 값이 true인 요소만 추출하여 새로운 배열을 만든다
+        false면 새로운 배열에서 제외한다
+        ex)
+            const arr = [
+                {
+                    id: 1,
+                    name: "김재하1"
+                },
+                {
+                    id: 2,
+                    name: "김재하2"
+                }.
+                {
+                    id: 3,
+                    name: "김재하3"
+                }
+            ]
+
+            const filterArr = arr.filter((el, index, originArr) => {
+                return el.id !== 1
+            })
+
+            console.log(filterArr)
+            // [{id: 2, name: "김재하2"}, {id: 3, name: "김재하3"}]
+
+    find
+        배열의 모든 요소를 순회하며 주어진 콜백함수를 실행하고 그반환값이 true인 것 중 첫번째 요소를 반환
+
+    findIndex
+        배열의 모든 요소를 순회하며 주어진 콜백함수를 실행하고 그 반환값이 true인 것 중 첫번째 요소의 인덱스를 반환
+        찾고자 하는 데이터가 없다면 -1을 반환
+
+    reduce
+        누적 값을 구할 때 많이 사용, 요소들이 계산된 누적값과 현재 요소를 return
+
+    every
+        배열의 모든 요소를 순회하며 해당 조건이 모두 만족하면 true 아니면 false를 반환
+
+    some
+        배열의 모든 요소를 순회하며 해당 조건이 일부 만족하면 true 아니면 false를 반환
+
+==============================================================================================================================================================
+
+이터러블한 객체
+    - 순회 가능한 객체
+
+이터러블 객체의 반복문
+    - for
+    - forEach
+    - for in
+    - for of
+
+배열의 생성
+    - Array.from()
+    - Array.fill()

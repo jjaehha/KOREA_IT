@@ -1,0 +1,16 @@
+font-family
+    https://fonts.google.com/
+    https://hangeul.naver.com/
+
+적용법
+    link
+    import (가지고 오겠다)
+
+    download (파일)
+
+    크기 단위 (px, em, rem, %, calc)
+    패딩 마진
+    바스 사이징
+    테두리
+    ** 디스플레이, 플렉시블 레이아웃, 포지션
+    ** 그리드 레이아웃, 미디어 쿼리 (컨테이너)

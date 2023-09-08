@@ -1,0 +1,108 @@
+오리엔테이션
+    이름: 배상엽 강사
+    메일: cidea100@naver.com
+        제목: 1900 프론트화목 김재하
+        내용: 오류메시지 + 코드 전체
+    수업: 프론트엔드2 
+    시간: 19:00 ~ 22:00
+    수업자료:
+        카카오톡
+        구글드라이브(코드, 영상)
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+CSS display 속성
+    block
+        한줄을 통채로 차지
+    inline
+        컨텐츠(내용)의 너비와 높이 만큼만 차지
+    inline-block
+        너비가 존재(block), 옆에 다른요소가 올 수 있다(inline)
+    none
+        보이지 않게 표시
+    visibility
+        hidden
+            눈으로 보이지 않게
+        visible
+            (기본), 눈으로 보이게
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+flex(플렉서블 레이아웃)
+    대부분 웹사이트는 수직 구성
+    레이아웃을 구성할때 가장 많이 사용하는 요소들이 대부분 블록으로 설정되어 있음
+    수직으로 쌓이기 때문에 수직 구성은 쉽지만 수평 구성이 어렵다
+        (float, inline-block, table ...)
+    조금 더 쉽게 수평으로 레이아웃을 구성하기 위해 사용 --> flex
+
+flexbox
+    수평 혹은 수직으로 구성(배치)된 요소 자체를 의미
+    기본적으로 flexbox는 1차원이다(수평으로만 구성)
+    기본적으로 방향은 수평
+
+flexcontainer
+    flexbox들이 놓여있는 영역
+    (display 속성값이 flex인 요소)
+    기본 flexbox들은 행으로 나열
+        flex-direction
+            row(기본)
+            row-reverse 행 반대방향
+            column 열 방향
+            column-reverse 열 반대방향
+
+    여유공간이 없을 경우 대처 방안
+        flex-wrap
+            nowrap(기본값) 넌ㅁ어가지 않음 요소의 너비를 줄여서 한줄에 배치
+            wrap 여유공간이 없으면 다음줄로 넘김(아래쪽)
+            wrap-reverse 여유공간이 없으면 다음줄로 넘김(위쪽)
+
+    flex-flow (flex-direction, flex-wrap을 한번에 설정할수 있는 단축속성)
+        ex) flex-flow: row-reverse nowrap
+    
+    주축(main-axis)
+        플렉스 컨테이너 안에서 플렉스 박스(항목)을 배치 하는 방향
+        주축정렬
+            justify-content
+                space-between
+                space-evenly
+                space-around
+                center
+                    주축 가운데
+                flex-start
+                    주축 시작선
+                flex-end
+                    주축 끝선
+    
+    교차측(cross-axis)
+        주축과 수직 방향
+        교차추정렬
+            align-items
+                flex-start
+                    교차축시작선
+                flex-end
+                    교차축끝선
+                center
+                    교차축중앙
+                baseline
+                    글자 밑선 기준
+                stretch
+                    교차축 만큼 늘리기
+                
+            align-self (플렉스박스 속성)
+                부모(플렉스컨테이너)의 교차축정렬을 따르는 것이 아닌 자신만의 교차축 정렬을 따름
+
+    flexbox(플렉스항목)에 적용할 수 있는 속성
+        flex-grow
+            flex-item(플렉스 항목)이 flex-container 요소 내부에서 할당ㅇ 가능한 공간의 정도를 선언
+            flex-container내부에 있는 형제 flex-item들이 모두 동일한 flex-grow값을 갖고 있다면
+            동일한 공간(크기)을 할당 받는다 하지만 서로 다른 값을 지정하면 상대적인 크기를 갖는다
+        flex-shrink
+            flex-item의 크기가 flex-container보다 클때 flex-shrink속성을 사용하여
+            flex-container 내부의 flex-item 크기를 축소시킬 수 있다.
+        flex-basis
+            flex-item의 초기 크기를 지정
+            설정되는 크기는 flex-direction에 따라서 달라진다
+            주축이 가로라면 가로길이, 세로라면 세로길이를 의미한다
+        flex(축약형)
+            flex: flex-grow값 flex-shrink값 flex-basis값
+

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="div1">div1입니다</div>
+    <div id="div2">
+      div2입니다
+      <ol>
+        <li>항목1</li>
+        <li>항목2</li>
+        <li>항목3</li>
+        <li>항목4</li>
+      </ol>
+    </div>
+
+    <script>
+      let myH1 = document.createElement("h1");
+      console.log([myH1]);
+      myH1.textContent = "내용입니다!";
+      console.log(myH1);
+
+      let div2 = document.querySelector("#div2");
+      console.log([div2]);
+      div2.appendChild(myH1);
+    </script>
+  </body>
+</html>

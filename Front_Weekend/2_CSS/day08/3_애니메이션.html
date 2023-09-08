@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2_애니메이션</title>
+    <style>
+      .box {
+        box-sizing: border-box;
+        border: 1px solid #000;
+        margin: 100px 100px 0 0;
+        padding: 20px;
+        height: 80px;
+        animation: moving 3s infinite alternate;
+        /* 
+        name: moving
+        duration: 3s
+        count: infinite, n
+
+        normal: 완료 후 초기상태
+        alternate: 한번 끝까지 실행 <--> 반대로 실행
+        reverse: 프래임을 거꾸로 실행
+        */
+      }
+
+      @keyframes moving {
+        from {
+          width: 170px;
+          background-color: ghostwhite;
+          padding: 0 10px 0 0;
+          opacity: 0.5;
+          transform: scale(0.5) rotate(300degg);
+        }
+
+        50% {
+          width: 300px;
+          background-color: red;
+          padding: 0 140px 0 0;
+          opacity: 1;
+          transform: scale(1) rotate(-15deg);
+        }
+
+        to {
+          width: 300px;
+          background-color: ghostwhite;
+          padding: 0 10px 0 0;
+          opacity: 1;
+          transform: rotate(-180deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h2>animation - 1</h2>
+    <div class="box">
+      <h2>CSS Animation</h2>
+    </div>
+  </body>
+</html>

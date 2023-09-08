@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>그라데이션</title>
+    <style>
+      div {
+        width: 360px;
+        height: 148px;
+      }
+
+      .gradient-1 {
+        background: linear-gradient(to left, transparent 90%, #f00);
+        background: linear-gradient(
+          to top,
+          red,
+          orange,
+          yellow,
+          green,
+          blue,
+          navy,
+          violet
+        );
+      }
+
+      .gradient-2 {
+        background: radial-gradient(circle at center, #f00, transparent);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="gradient-1"></div>
+    <div class="gradient-2"></div>
+  </body>
+</html>

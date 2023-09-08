@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>고정위치</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        width: 100%;
+        height: 80px;
+        background-color: black;
+      }
+      /* 
+        해결 방법?
+        1. main에 header의 높이만크 padding-top
+        2. javascript를 이용하여 특정 스크롤 높이만큼 내려왔을 때 position을 변환
+      */
+
+      main {
+        margin-top: 80px;
+        height: 200vh;
+      }
+
+      aside {
+        width: 100px;
+        height: 500px;
+        background-color: #d9d9d9;
+        opacity: 0.7;
+        top: 30%;
+        right: 5%;
+        position: fixed;
+      }
+
+      .modal-background {
+        background-color: rgba(0, 0, 0, 0.7);
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        z-index: 1;
+        /* 기본 값은 0 */
+        /* 단위를 1로 주지는 않습니다 100, 1000 단위 */
+        /* 숫자가 높을 수록 겹치는 요소(우선순위가 같은 요소)와 비교하여 해당 요소가 가장 위로 올라온다 */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="modal-background">
+      <div style="background-color: blue; width: 200px; height: 200px"></div>
+    </div>
+    <header></header>
+    <aside></aside>
+    <main>
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos
+      veritatis nihil animi totam est sunt ullam rerum vel. Facilis culpa
+      molestias doloremque tempora corporis? Praesentium consequatur et
+      consectetur modi iusto.
+    </main>
+    <footer></footer>
+  </body>
+</html>

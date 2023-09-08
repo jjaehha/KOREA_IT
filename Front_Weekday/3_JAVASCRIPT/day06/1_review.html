@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: #e9e9e9;
+        text-align: center;
+      }
+
+      h4 {
+        font-size: 54px;
+        color: aqua;
+        font-weight: 900;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>삼항연산자를 활용하여 결과 보여주기</h2>
+    <input type="text" id="cnt" placeholder="라면의 갯수 입력" />
+    <button onclick="getRes()">확인</button>
+    <h3>필요한 상자의 갯수</h3>
+    <h4></h4>
+    <script>
+      function getRes() {
+        console.log(document.querySelector("#cnt").value);
+        let num = document.querySelector("#cnt").value;
+        // num 값의 type // String
+
+        // num에 들어있는 값을 Number 타입으로 변환하여 다시 num에 대입
+        num = Number(num);
+
+        // num에 들어있는 값은 Number 타입
+        // num: 20
+        // 결과: 1
+
+        // num: 21
+        // 결과: 2
+
+        let res = num % 20 === 0 ? num / 20 : Math.floor(num / 20 + 1);
+
+        document.querySelector("h4").innerText = `${res}개`;
+      }
+    </script>
+  </body>
+</html>

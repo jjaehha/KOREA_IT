@@ -1,0 +1,40 @@
+DOM 객체는 트리구조로 이루어져 있다
+    트리구조: 계층관계가 존재하는 구조(조직도, 파일경로, ...)
+
+용어
+각 객체는 Node 라고 부른다
+태그객체는 ElementNode라고 부른다
+텍스타객체는 TextNode라고 부른다
+html속성 AttributeNode
+
+    <html>
+        <head>
+            <title>문서제목</title>
+        </head>
+        <body>
+            <div id = 'div1'>
+                <h1>제목입니다</h1>
+            </div>
+            <div id = 'div1'>
+                div입니다
+            </div>
+        </body>
+    </html>
+
+    html Element
+        head Element
+            title Element
+                TextNode(문서제목)
+        body Element
+            div Element --- AttributeNode(id)
+                h1 Element
+                    TextNode(제목입니다)
+            div Element --- AttributeNode(id)
+                TextNode(div입니다)
+
+    document.createElement(태그이름)
+    ---> 해당 태그 객체(Node)를 만들어 준다
+
+    부모태그.appendChild(태그객체)
+    --> 부모태그의 마지막 자식으로 태그 객체가 추가가 된다
+        

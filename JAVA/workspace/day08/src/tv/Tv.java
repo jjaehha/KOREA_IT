@@ -1,0 +1,32 @@
+package tv;
+
+public class Tv {
+	/*
+	 * Tv 클래스는 ch, vol, power 멤버 변수 만들기
+	 * volUp, volDown, chUp, chDown
+	 * powerOnOff 메소드 만들기
+	 * 
+	 * Tv2 클래스는 Tv를 상속받고 mode라는 멤버변수만들기
+	 * SmartTv클래스는 Tv2를 상속받고 netflix 메소드만들기
+	 */
+	
+	int ch;
+	int vol;
+	int power;
+	
+	void volUp() {
+		
+	}
+	void volDown() {
+		
+	}
+	void chUp() {
+		
+	}
+	void chDown() {
+		
+	}
+	void powerOnOff() {
+		
+	}
+}

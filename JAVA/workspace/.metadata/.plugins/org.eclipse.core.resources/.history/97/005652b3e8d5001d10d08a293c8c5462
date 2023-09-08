@@ -1,0 +1,50 @@
+package day07;
+
+class Creature {
+
+	//캐릭터이름
+	String name;
+	//hp
+	int hp;
+	//밥먹은 수
+	int eatCnt;
+	//턴
+	int turn;
+	//변
+	boolean poo;
+
+	//먹기: 턴 1증가, hp 2증가
+	void eat() {
+		this.turn++;
+		this.hp += 2;
+	}
+
+	//자기: 3초동안 잠에든다. hp2 감소, 턴 2증가
+	void sleep() {
+		for (int i = 0; i < 3; i++) {
+			System.out.println("zzZzzZ");
+
+			try {
+				Thread.sleep(1000);
+			} catch (Exception e) {
+
+			}
+		}
+		System.out.println("잠에서 깨어났습니다");
+		this.hp -= 2;
+		this.turn += 2;
+	}
+	//대변보기: 밥을 3번 먹으면 실행, 변을 안치우면 1턴당 hp1감소
+	void poop() {
+		System.out.println("*변을 봤다");
+		this.poo = true;
+		this.eatCnt = 0;
+	}
+//	  청소하기: 대현을 치운다.
+//	  상태보기
+
+}
+
+public class Game {
+
+}

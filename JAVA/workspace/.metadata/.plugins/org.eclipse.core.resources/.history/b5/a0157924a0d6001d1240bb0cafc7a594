@@ -1,0 +1,12 @@
+package swap;
+
+public class ArrayTest {
+	public static void main(String[] args) {
+		int[] ar = {1, 2, 3};
+		int[] ar2 = ar;
+		
+		ar[1] = 100;
+		
+		System.out.println(ar2[1]);
+	}
+}

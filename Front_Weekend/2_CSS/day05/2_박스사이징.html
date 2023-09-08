@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>박스사이징</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      header {
+        width: 300vw;
+        height: 100px;
+        padding: 0 20px;
+        background-color: green;
+      }
+
+      div {
+        width: 300px;
+        height: 150px;
+        border: 10px solid #f00;
+        margin: 10px;
+        padding: 30px;
+      }
+
+      .bs1 {
+        box-sizing: content-box;
+      }
+
+      .bs2 {
+        width: 380px;
+      }
+
+      input {
+        padding-left: 16px;
+      }
+      /* 
+      box-sizing - border-box일 경우
+      padding과 border를 포함한 width의 값이
+      해당 요소에 주어진 width의 값과 일치한다
+      */
+    </style>
+  </head>
+  <body>
+    <header></header>
+    <div class="bs1"></div>
+    <div class="bs2"></div>
+    <input />
+  </body>
+</html>

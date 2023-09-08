@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      [type="text"] {
+        color: blue;
+        text-align: center;
+      }
+
+      [type="text"]::placeholder {
+        color: red;
+      }
+
+      [type="text"]:focus {
+        background-color: black;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      [href]:visited {
+        color: green;
+      }
+
+      [href]:hover {
+        color: blueviolet;
+      }
+
+      ul > li {
+        list-style: none;
+      }
+
+      ul > li::after {
+        content: "|";
+      }
+
+      ul > li:last-of-type::after {
+        content: " ";
+      }
+    </style>
+  </head>
+  <body>
+    <h2>가상 요소 선택자</h2>
+    <input type="text" placeholder="텍스트를 입력해 주세요" />
+    <a href="https://www.naver.com">네이버로 이동</a>
+    <ul>
+      <li>로그인</li>
+      <li>회원가입</li>
+    </ul>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+package day07;
+
+class Tv {
+	int ch;
+	int vol;
+	boolean power;
+	int inch;
+	int price;
+	String color;
+}
+
+public class TvTest {
+
+}
